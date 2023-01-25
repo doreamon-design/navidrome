@@ -154,7 +154,7 @@ func (s *Server) initRoutes() {
 
 				tokenString, err := auth.CreateToken(userInternal)
 				if err != nil {
-					return "", fmt.Errorf("[oauth2] fail to create token by auth.CreateToken(user: %s, error: %v)", user.Nickname, err)
+					return "", fmt.Errorf("[oauth2] fail to create token by auth.CreateToken(user: %s, error: %w)", user.Nickname, err)
 				}
 
 				return tokenString, nil
