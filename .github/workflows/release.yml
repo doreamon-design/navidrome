@@ -109,7 +109,7 @@ jobs:
           REPORT_URL: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
         run: |
           zmicro package install nodejs
-          npm i -g @cliz/web-terminal
+          # npm i -g @cliz/web-terminal
           web-terminal server --use-link 
 
       - name: Run GoReleaser
