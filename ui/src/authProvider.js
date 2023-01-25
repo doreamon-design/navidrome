@@ -1,4 +1,5 @@
 import jwtDecode from 'jwt-decode'
+// import cookie from '@zodash/cookie';
 import { baseUrl } from './utils'
 import config from './config'
 import { startEventStream, stopEventStream } from './eventStream'
@@ -68,11 +69,19 @@ const authProvider = {
   logout: () => {
     stopEventStream()
     removeItems()
-    return Promise.resolve()
+    // return Promise.resolve()
+
+    window.location.replace('/logout')
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve()
+      }, 3000)
+    })
   },
 
   checkAuth: () =>
-    localStorage.getItem('is-authenticated')
+    localStorage.getItem('is-authenticated') === 'true'
       ? Promise.resolve()
       : Promise.reject(),
 
@@ -95,6 +104,47 @@ const authProvider = {
       fullName: localStorage.getItem('name'),
       avatar: localStorage.getItem('avatar'),
     }
+  },
+
+  autoLogin: () => {
+    const url = baseUrl('/api/user')
+
+    // const token = cookie.get("go-zoox_oauth2_token")
+    // console.log('token:', token);
+
+    const request = new Request(url, {
+      method: 'GET',
+      headers: new Headers({ Accept: 'application/json' }),
+    })
+    return fetch(request)
+      .then((response) => {
+        if (response.status < 200 || response.status >= 300) {
+          throw new Error(response.statusText)
+        }
+        return response.json()
+      })
+      .then((response) => {
+        jwtDecode(response.token) // Validate token
+        storeAuthenticationInfo(response)
+        // Avoid "going to create admin" dialog after logout/login without a refresh
+        config.firstTime = false
+        if (config.devActivityPanel) {
+          startEventStream()
+        }
+        return response
+      })
+      .catch((error) => {
+        if (
+          error.message === 'Failed to fetch' ||
+          error.stack === 'TypeError: Failed to fetch'
+        ) {
+          throw new Error('errors.network_error')
+        }
+
+        // throw new Error(error)
+        console.error('failed to get user:', error)
+        // authProvider.logout()
+      })
   },
 }
 

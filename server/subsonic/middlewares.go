@@ -108,7 +108,7 @@ func authenticate(ds model.DataStore) func(next http.Handler) http.Handler {
 }
 
 func validateUser(ctx context.Context, ds model.DataStore, username, pass, token, salt, jwt string) (*model.User, error) {
-	user, err := ds.User(ctx).FindByUsernameWithPassword(username)
+	user, err := ds.User(ctx).FindByUsername(username)
 	if errors.Is(err, model.ErrNotFound) {
 		return nil, model.ErrInvalidAuth
 	}

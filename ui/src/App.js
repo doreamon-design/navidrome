@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactGA from 'react-ga'
 import { Provider } from 'react-redux'
 import { createHashHistory } from 'history'
@@ -68,11 +68,25 @@ const adminStore = createAdminStore({
   },
 })
 
-const App = () => (
-  <Provider store={adminStore}>
-    <Admin />
-  </Provider>
-)
+const App = () => {
+  const [isCheckLogining, setIsCheckLogining] = useState(true)
+
+  useEffect(() => {
+    authProvider.autoLogin().finally(() => {
+      setIsCheckLogining(false)
+    })
+  }, [])
+
+  if (isCheckLogining) {
+    return <div>Checking login ...</div>
+  }
+
+  return (
+    <Provider store={adminStore}>
+      <Admin />
+    </Provider>
+  )
+}
 
 const Admin = (props) => {
   useChangeThemeColor()
@@ -145,6 +159,7 @@ const AppWithHotkeys = () => {
   if (config.devEnableShare && shareInfo) {
     return <SharePlayer />
   }
+
   return (
     <HotKeys keyMap={keyMap}>
       <App />

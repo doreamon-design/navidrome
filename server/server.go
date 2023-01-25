@@ -2,6 +2,7 @@ package server
 
 import (
 	"context"
+	"encoding/json"
 	"errors"
 	"fmt"
 	"net/http"
@@ -13,12 +14,17 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/httprate"
+	"github.com/go-chi/jwtauth/v5"
+	"github.com/go-zoox/oauth2"
 	"github.com/navidrome/navidrome/conf"
 	"github.com/navidrome/navidrome/consts"
 	"github.com/navidrome/navidrome/core/auth"
 	"github.com/navidrome/navidrome/log"
 	"github.com/navidrome/navidrome/model"
+	"github.com/navidrome/navidrome/model/request"
 	"github.com/navidrome/navidrome/ui"
+
+	"github.com/go-zoox/oauth2/http/handler/doreamon"
 )
 
 type Server struct {
@@ -32,12 +38,15 @@ func New(ds model.DataStore) *Server {
 	auth.Init(s.ds)
 	initialSetup(ds)
 	s.initRoutes()
+	fmt.Println("mount backend")
 	checkFfmpegInstallation()
 	checkExternalCredentials()
 	return s
 }
 
 func (s *Server) MountRouter(description, urlPath string, subRouter http.Handler) {
+	fmt.Println("mount MountRouter:", urlPath, subRouter)
+
 	urlPath = path.Join(conf.Server.BaseURL, urlPath)
 	log.Info(fmt.Sprintf("Mounting %s routes", description), "path", urlPath)
 	s.router.Group(func(r chi.Router) {
@@ -101,7 +110,61 @@ func (s *Server) initRoutes() {
 	r.Use(requestLogger)
 	r.Use(robotsTXT(ui.BuildAssets()))
 	r.Use(authHeaderMapper)
+
 	r.Use(jwtVerifier)
+
+	r.Use(func(next http.Handler) http.Handler {
+		return doreamon.CreateHTTPHandler(
+			"navidrome",
+			func(cfg *doreamon.VerifyUserConfig, tokeString string, r *http.Request, w http.ResponseWriter) error {
+				ctx := r.Context()
+
+				token, err := jwtauth.VerifyRequest(auth.TokenAuth, r, func(r *http.Request) string {
+					return tokeString
+				})
+				if err != nil {
+					return fmt.Errorf("[oauth2][VerifyUser] failed to verify token with jwtauth(error: %w)", err)
+				}
+
+				username := token.Subject()
+
+				user, err := s.ds.User(ctx).FindByUsername(username)
+				if err != nil {
+					return fmt.Errorf("[oauth2][VerifyUser] failed to get user by username(%s, error: %w)", username, err)
+				}
+
+				ctx = log.NewContext(ctx, "username", username)
+				ctx = request.WithTokenString(ctx, tokeString)
+				ctx = request.WithUsername(ctx, user.UserName)
+				ctx = request.WithUser(ctx, *user)
+				next.ServeHTTP(w, r.WithContext(ctx))
+				return nil
+			},
+			func(cfg *doreamon.SaveUserConfig, user *oauth2.User, token *oauth2.Token, r *http.Request, w http.ResponseWriter) (string, error) {
+				userRepo := s.ds.User(r.Context())
+				userInternal, err := userRepo.GetOrCreate(user.Email, user.Nickname)
+				if err != nil {
+					return "", fmt.Errorf("[oauth2] failed to get or create user(%s): %w", user.Nickname, err)
+				}
+
+				err = userRepo.UpdateLastLoginAt(userInternal.ID)
+				if err != nil {
+					return "", fmt.Errorf("[oauth2] fail to update LastLoginAt(user: %s, error: %w)", user.Nickname, err)
+				}
+
+				tokenString, err := auth.CreateToken(userInternal)
+				if err != nil {
+					return "", fmt.Errorf("[oauth2] fail to create token by auth.CreateToken(user: %s, error: %w)", user.Nickname, err)
+				}
+
+				return tokenString, nil
+			},
+			func(w http.ResponseWriter, r *http.Request) error {
+				next.ServeHTTP(w, r)
+				return nil
+			},
+		)
+	})
 
 	r.Route(path.Join(conf.Server.BaseURL, "/auth"), func(r chi.Router) {
 		if conf.Server.AuthRequestLimit > 0 {
@@ -116,6 +179,42 @@ func (s *Server) initRoutes() {
 			r.Post("/login", login(s.ds))
 		}
 		r.Post("/createAdmin", createAdmin(s.ds))
+	})
+
+	r.Route("/api/user", func(r chi.Router) {
+		r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("content-type", "application/json")
+
+			tokenString, ok := request.TokenStringFrom(r.Context())
+			if !ok {
+				data := map[string]any{
+					"code":    401,
+					"message": "unauthorized",
+				}
+				dataString, _ := json.Marshal(data)
+				w.WriteHeader(401)
+				_, _ = w.Write(dataString)
+				return
+			}
+
+			user, ok := request.UserFrom(r.Context())
+			if !ok {
+				data := map[string]any{
+					"code":    401,
+					"message": "unauthorized",
+				}
+				dataString, _ := json.Marshal(data)
+				w.WriteHeader(401)
+				_, _ = w.Write(dataString)
+				return
+			}
+
+			payload := buildAuthPayload(&user)
+			payload["token"] = tokenString
+			dataString, _ := json.Marshal(payload)
+			w.WriteHeader(200)
+			_, _ = w.Write(dataString)
+		})
 	})
 
 	// Redirect root to UI URL
