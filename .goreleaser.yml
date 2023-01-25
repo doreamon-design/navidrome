@@ -1,9 +1,9 @@
 # GoReleaser config
 project_name: navidrome
 
-before:
-  hooks:
-    - go env -w GOFLAGS="-buildvcs=false"
+# before:
+#   hooks:
+#     - go env -w GOFLAGS="-buildvcs=false"
 
 builds:
   - id: navidrome_linux_amd64

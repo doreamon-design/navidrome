@@ -151,7 +151,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: goreleaser release --rm-dist --skip-validate
+          args: goreleaser release --rm-dist
 
       - uses: actions/upload-artifact@v3
         with:
