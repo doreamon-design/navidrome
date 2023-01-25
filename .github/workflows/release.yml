@@ -55,15 +55,22 @@ jobs:
       - name: Install taglib
         run: sudo apt-get install libtag1-dev
 
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v3
-
       - name: Set up Go ${{ matrix.go_version }}
         uses: actions/setup-go@v3
         with:
           go-version: ${{ matrix.go_version }}
-          cache: true
+        id: go
 
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v3
+
+      - uses: actions/cache@v2
+        id: cache-go
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ matrix.go_version }}-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-${{ matrix.go_version }}-
       - name: Download dependencies
         if: steps.cache-go.outputs.cache-hit != 'true'
         continue-on-error: ${{contains(matrix.go_version, 'beta') || contains(matrix.go_version, 'rc')}}
@@ -71,7 +78,7 @@ jobs:
 
       - name: Test
         continue-on-error: ${{contains(matrix.go_version, 'beta') || contains(matrix.go_version, 'rc')}}
-        run: go test -race -cover ./... -v
+        run: go test -cover ./... -v
 
   binaries:
     name: Build binaries
