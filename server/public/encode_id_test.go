@@ -1,9 +1,9 @@
 package public
 
 import (
+	"github.com/doreamon-design/navidrome/core/auth"
+	"github.com/doreamon-design/navidrome/model"
 	"github.com/go-chi/jwtauth/v5"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/model"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

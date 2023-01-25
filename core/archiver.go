@@ -10,8 +10,8 @@ import (
 	"strings"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 type Archiver interface {

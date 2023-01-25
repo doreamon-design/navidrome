@@ -3,7 +3,7 @@ package tests
 import (
 	"time"
 
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 type MockedScrobbleBufferRepo struct {

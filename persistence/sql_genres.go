@@ -2,8 +2,8 @@ package persistence
 
 import (
 	. "github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func (r sqlRepository) withGenres(sql SelectBuilder) SelectBuilder {

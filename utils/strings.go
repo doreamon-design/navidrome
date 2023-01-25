@@ -3,7 +3,7 @@ package utils
 import (
 	"strings"
 
-	"github.com/navidrome/navidrome/conf"
+	"github.com/doreamon-design/navidrome/conf"
 )
 
 func NoArticle(name string) string {

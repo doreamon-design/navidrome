@@ -4,11 +4,11 @@ import (
 	"database/sql"
 	"fmt"
 
+	"github.com/doreamon-design/navidrome/conf"
+	_ "github.com/doreamon-design/navidrome/db/migration"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/utils/singleton"
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/navidrome/navidrome/conf"
-	_ "github.com/navidrome/navidrome/db/migration"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/utils/singleton"
 	"github.com/pressly/goose"
 )
 

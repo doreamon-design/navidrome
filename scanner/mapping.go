@@ -9,11 +9,11 @@ import (
 	"time"
 
 	"github.com/deluan/sanitize"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/scanner/metadata"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/scanner/metadata"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 type mediaFileMapper struct {

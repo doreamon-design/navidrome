@@ -6,11 +6,11 @@ import (
 	"os"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/persistence"
+	"github.com/doreamon-design/navidrome/core/auth"
+	"github.com/doreamon-design/navidrome/db"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/persistence"
 	"github.com/spf13/cobra"
 )
 

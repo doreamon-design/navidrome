@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/events"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/artwork"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server/events"
 )
 
 type Scanner interface {

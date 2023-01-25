@@ -13,10 +13,10 @@ import (
 	"time"
 
 	"github.com/disintegration/imaging"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/number"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils/number"
 )
 
 type resizedArtworkReader struct {

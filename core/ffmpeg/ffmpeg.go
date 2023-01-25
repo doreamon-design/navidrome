@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 type FFmpeg interface {

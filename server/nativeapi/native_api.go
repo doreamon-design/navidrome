@@ -5,12 +5,12 @@ import (
 	"net/http"
 
 	"github.com/deluan/rest"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server"
+	"github.com/doreamon-design/navidrome/server/events"
 	"github.com/go-chi/chi/v5"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
-	"github.com/navidrome/navidrome/server/events"
 )
 
 type Router struct {

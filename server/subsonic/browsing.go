@@ -7,13 +7,13 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/public"
-	"github.com/navidrome/navidrome/server/subsonic/filter"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server/public"
+	"github.com/doreamon-design/navidrome/server/subsonic/filter"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func (api *Router) GetMusicFolders(r *http.Request) (*responses.Subsonic, error) {

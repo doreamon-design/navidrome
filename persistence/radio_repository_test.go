@@ -5,9 +5,9 @@ import (
 
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

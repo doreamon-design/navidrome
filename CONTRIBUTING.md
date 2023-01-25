@@ -9,15 +9,15 @@ Navidrome is a streaming service which allows you to enjoy your music collection
 
 
 ## Code of Conduct
-Please read the following [Code of Conduct](https://github.com/navidrome/navidrome/blob/master/CODE_OF_CONDUCT.md).
+Please read the following [Code of Conduct](https://github.com/doreamon-design/navidrome/blob/master/CODE_OF_CONDUCT.md).
 
 ## Issues
 Found any issue or bug in our codebase? Have a great idea you want to propose or discuss with 
-the developers? You can help by submitting an [issue](https://github.com/navidrome/navidrome/issues/new/choose)
+the developers? You can help by submitting an [issue](https://github.com/doreamon-design/navidrome/issues/new/choose)
 to the GitHub repository. 
 
 **Before opening a new issue, please check if the issue has not been already made by searching 
-the [issues](https://github.com/navidrome/navidrome/issues)**
+the [issues](https://github.com/doreamon-design/navidrome/issues)**
 
 ## Questions
 We would like to have discussions and general queries related to Navidrome on our [Discord channel](https://discord.gg/2qMuMyHfSV).

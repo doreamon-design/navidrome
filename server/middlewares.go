@@ -12,10 +12,10 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/cors"
 
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model/request"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/request"
 	"github.com/unrolled/secure"
 )
 

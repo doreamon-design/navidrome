@@ -20,7 +20,7 @@ import (
 	"sync"
 	"unsafe"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 func Read(filename string) (tags map[string][]string, err error) {

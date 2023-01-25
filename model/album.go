@@ -3,7 +3,7 @@ package model
 import (
 	"time"
 
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/doreamon-design/navidrome/utils/slice"
 	"golang.org/x/exp/slices"
 )
 

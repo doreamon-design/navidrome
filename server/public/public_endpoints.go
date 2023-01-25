@@ -4,14 +4,14 @@ import (
 	"net/http"
 	"path"
 
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/artwork"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server"
+	"github.com/doreamon-design/navidrome/ui"
 	"github.com/go-chi/chi/v5"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
-	"github.com/navidrome/navidrome/ui"
 )
 
 type Router struct {

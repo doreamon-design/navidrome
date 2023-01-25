@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/tests"
 
-	"github.com/navidrome/navidrome/conf"
+	"github.com/doreamon-design/navidrome/conf"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

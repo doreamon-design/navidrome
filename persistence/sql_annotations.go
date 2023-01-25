@@ -6,9 +6,9 @@ import (
 
 	. "github.com/Masterminds/squirrel"
 	"github.com/beego/beego/v2/client/orm"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
 )
 
 const annotationTable = "annotation"

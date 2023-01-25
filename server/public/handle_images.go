@@ -7,9 +7,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func (p *Router) handleImages(w http.ResponseWriter, r *http.Request) {

@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/deluan/sanitize"
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 
 	"github.com/pressly/goose"
 )

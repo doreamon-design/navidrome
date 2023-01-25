@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/deluan/sanitize"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/public"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server/public"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 type searchParams struct {

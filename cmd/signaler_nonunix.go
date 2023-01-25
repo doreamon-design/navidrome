@@ -7,7 +7,7 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 func startSignaler(ctx context.Context) func() error {

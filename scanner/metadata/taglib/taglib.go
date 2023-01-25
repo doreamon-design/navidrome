@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/scanner/metadata"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/scanner/metadata"
 )
 
 const ExtractorID = "taglib"

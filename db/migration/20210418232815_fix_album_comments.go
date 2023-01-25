@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"strings"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
 	"github.com/pressly/goose"
 )
 

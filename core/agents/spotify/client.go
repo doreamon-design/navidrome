@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 const apiBaseUrl = "https://api.spotify.com/v1/"

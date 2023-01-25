@@ -7,10 +7,10 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/deluan/rest"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils/slice"
 	gonanoid "github.com/matoous/go-nanoid/v2"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/slice"
 )
 
 type Share interface {

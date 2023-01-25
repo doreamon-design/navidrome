@@ -8,15 +8,15 @@ import (
 	"regexp"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/resources"
-	"github.com/navidrome/navidrome/server/subsonic/filter"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
-	"github.com/navidrome/navidrome/utils/gravatar"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/resources"
+	"github.com/doreamon-design/navidrome/server/subsonic/filter"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
+	"github.com/doreamon-design/navidrome/utils/gravatar"
 )
 
 func (api *Router) GetAvatar(w http.ResponseWriter, r *http.Request) (*responses.Subsonic, error) {

@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"code.cloudfoundry.org/go-diodes"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/utils/singleton"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/utils/singleton"
 )
 
 type Broker interface {

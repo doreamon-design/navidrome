@@ -7,11 +7,11 @@ import (
 	"io"
 	"time"
 
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/cache"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/ffmpeg"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils/cache"
 	_ "golang.org/x/image/webp"
 )
 

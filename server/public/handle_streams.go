@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/doreamon-design/navidrome/core/auth"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/utils"
 	"github.com/lestrrat-go/jwx/v2/jwt"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/utils"
 )
 
 func (p *Router) handleStream(w http.ResponseWriter, r *http.Request) {

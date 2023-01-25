@@ -3,9 +3,9 @@ package subsonic
 import (
 	"net/http"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
 )
 
 // TODO This is a placeholder. The real one has to read this info from a config file or the database

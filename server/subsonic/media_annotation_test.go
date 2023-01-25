@@ -6,13 +6,13 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/navidrome/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/model/request"
 
-	"github.com/navidrome/navidrome/core/scrobbler"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/events"
-	"github.com/navidrome/navidrome/tests"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/core/scrobbler"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server/events"
+	"github.com/doreamon-design/navidrome/tests"
+	"github.com/doreamon-design/navidrome/utils"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

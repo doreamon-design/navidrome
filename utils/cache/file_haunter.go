@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/djherbis/fscache"
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 type haunterKV struct {

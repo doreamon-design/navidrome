@@ -9,13 +9,13 @@ import (
 	"sync"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/utils/cache"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/core/ffmpeg"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/utils/cache"
 )
 
 type MediaStreamer interface {

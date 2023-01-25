@@ -9,17 +9,17 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/scanner/metadata"
-	_ "github.com/navidrome/navidrome/scanner/metadata/ffmpeg"
-	_ "github.com/navidrome/navidrome/scanner/metadata/taglib"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/artwork"
+	"github.com/doreamon-design/navidrome/core/auth"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/scanner/metadata"
+	_ "github.com/doreamon-design/navidrome/scanner/metadata/ffmpeg"
+	_ "github.com/doreamon-design/navidrome/scanner/metadata/taglib"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 type TagScanner struct {

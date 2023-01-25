@@ -5,13 +5,13 @@ import (
 	"errors"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/consts"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/events"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/server/events"
+	"github.com/doreamon-design/navidrome/tests"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

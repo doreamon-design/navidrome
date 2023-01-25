@@ -11,15 +11,15 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/auth"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
 	ua "github.com/mileusna/useragent"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
 )
 
 func postFormToQueryParams(next http.Handler) http.Handler {

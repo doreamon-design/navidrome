@@ -1,6 +1,6 @@
 package tests
 
-import "github.com/navidrome/navidrome/model"
+import "github.com/doreamon-design/navidrome/model"
 
 type MockedPropertyRepo struct {
 	model.PropertyRepository

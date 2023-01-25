@@ -8,11 +8,11 @@ import (
 	"path"
 	"strconv"
 
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/core/auth"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server"
 	"github.com/lestrrat-go/jwx/v2/jwt"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core/auth"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
 )
 
 func ImageURL(r *http.Request, artID model.ArtworkID, size int) string {

@@ -9,8 +9,8 @@ import (
 	. "github.com/Masterminds/squirrel"
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/deluan/rest"
+	"github.com/doreamon-design/navidrome/model"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/model"
 )
 
 type radioRepository struct {

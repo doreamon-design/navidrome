@@ -4,11 +4,11 @@ import (
 	"errors"
 	"time"
 
+	"github.com/doreamon-design/navidrome/utils/slice"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/utils/slice"
 	"golang.org/x/exp/maps"
 
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 func CreateMockMediaFileRepo() *MockMediaFileRepo {

@@ -6,12 +6,12 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/subsonic/filter"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
-	"github.com/navidrome/navidrome/utils/number"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server/subsonic/filter"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
+	"github.com/doreamon-design/navidrome/utils/number"
 )
 
 func (api *Router) getAlbumList(r *http.Request) (model.Albums, int64, error) {

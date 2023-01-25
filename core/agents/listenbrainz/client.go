@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"path"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 type listenBrainzError struct {

@@ -6,9 +6,9 @@ import (
 	"reflect"
 
 	"github.com/beego/beego/v2/client/orm"
-	"github.com/navidrome/navidrome/db"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/db"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 type SQLStore struct {

@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/utils/number"
 	"github.com/kr/pretty"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/utils/number"
 	"github.com/robfig/cron/v3"
 	"github.com/spf13/viper"
 )

@@ -4,12 +4,12 @@ import (
 	"context"
 	"os"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/conf/configtest"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/conf/configtest"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/tests"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )
@@ -87,7 +87,7 @@ var _ = Describe("MediaStreamer", func() {
 					Expect(bitRate).To(Equal(128))
 				})
 				It("returns raw if maxBitrate is equal or greater than original", func() {
-					// This happens with DSub (and maybe other clients?). See https://github.com/navidrome/navidrome/issues/2066
+					// This happens with DSub (and maybe other clients?). See https://github.com/doreamon-design/navidrome/issues/2066
 					format, bitRate := selectTranscodingOptions(ctx, ds, mf, "", 960)
 					Expect(format).To(Equal("raw"))
 					Expect(bitRate).To(Equal(0))

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/model/criteria"
+	"github.com/doreamon-design/navidrome/model/criteria"
 	"golang.org/x/exp/slices"
 )
 

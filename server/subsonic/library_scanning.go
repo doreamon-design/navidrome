@@ -4,11 +4,11 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model/request"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model/request"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func (api *Router) GetScanStatus(r *http.Request) (*responses.Subsonic, error) {

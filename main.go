@@ -3,7 +3,7 @@ package main
 import (
 	"runtime"
 
-	"github.com/navidrome/navidrome/cmd"
+	"github.com/doreamon-design/navidrome/cmd"
 )
 
 func main() {

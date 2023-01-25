@@ -11,15 +11,15 @@ import (
 
 	"github.com/Masterminds/squirrel"
 	"github.com/deluan/sanitize"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core/agents"
-	_ "github.com/navidrome/navidrome/core/agents/lastfm"
-	_ "github.com/navidrome/navidrome/core/agents/listenbrainz"
-	_ "github.com/navidrome/navidrome/core/agents/spotify"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
-	"github.com/navidrome/navidrome/utils/number"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/core/agents"
+	_ "github.com/doreamon-design/navidrome/core/agents/lastfm"
+	_ "github.com/doreamon-design/navidrome/core/agents/listenbrainz"
+	_ "github.com/doreamon-design/navidrome/core/agents/spotify"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils"
+	"github.com/doreamon-design/navidrome/utils/number"
 )
 
 const (

@@ -6,8 +6,8 @@ import (
 	"time"
 
 	"github.com/ReneKroon/ttlcache/v2"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 func newCachedGenreRepository(ctx context.Context, repo model.GenreRepository) model.GenreRepository {

@@ -2,7 +2,7 @@ package persistence
 
 import (
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/model"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

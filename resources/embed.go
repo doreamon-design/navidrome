@@ -7,8 +7,8 @@ import (
 	"os"
 	"path"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 var (

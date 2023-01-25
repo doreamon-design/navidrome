@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/model/request"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/model/request"
 )
 
 type Players interface {

@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/djherbis/fscache"
-	"github.com/navidrome/navidrome/utils/cache"
+	"github.com/doreamon-design/navidrome/utils/cache"
 )
 
 func TestFileHaunterMaxSize(t *testing.T) {

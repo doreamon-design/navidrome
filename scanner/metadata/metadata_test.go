@@ -1,10 +1,10 @@
 package metadata_test
 
 import (
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/scanner/metadata"
-	_ "github.com/navidrome/navidrome/scanner/metadata/ffmpeg"
-	_ "github.com/navidrome/navidrome/scanner/metadata/taglib"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/scanner/metadata"
+	_ "github.com/doreamon-design/navidrome/scanner/metadata/ffmpeg"
+	_ "github.com/doreamon-design/navidrome/scanner/metadata/taglib"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

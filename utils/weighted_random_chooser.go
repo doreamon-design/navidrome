@@ -3,7 +3,7 @@ package utils
 import (
 	"errors"
 
-	"github.com/navidrome/navidrome/utils/number"
+	"github.com/doreamon-design/navidrome/utils/number"
 )
 
 type WeightedChooser struct {

@@ -7,7 +7,7 @@ import (
 
 	"github.com/google/uuid"
 
-	"github.com/navidrome/navidrome/utils/singleton"
+	"github.com/doreamon-design/navidrome/utils/singleton"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

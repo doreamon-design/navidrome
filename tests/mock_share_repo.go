@@ -2,7 +2,7 @@ package tests
 
 import (
 	"github.com/deluan/rest"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 type MockShareRepo struct {

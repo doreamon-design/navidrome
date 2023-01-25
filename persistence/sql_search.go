@@ -4,8 +4,8 @@ import (
 	"strings"
 
 	. "github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func getFullText(text ...string) string {

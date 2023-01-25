@@ -70,7 +70,7 @@ buildall: buildjs build ##@Build Build the project, both frontend and backend
 .PHONY: buildall
 
 build: warning-noui-build check_go_env  ##@Build Build only backend
-	go build -ldflags="-X github.com/navidrome/navidrome/consts.gitSha=$(GIT_SHA) -X github.com/navidrome/navidrome/consts.gitTag=$(GIT_TAG)-SNAPSHOT" -tags=netgo
+	go build -ldflags="-X github.com/doreamon-design/navidrome/consts.gitSha=$(GIT_SHA) -X github.com/doreamon-design/navidrome/consts.gitTag=$(GIT_TAG)-SNAPSHOT" -tags=netgo
 .PHONY: build
 
 buildjs: check_node_env ##@Build Build only frontend

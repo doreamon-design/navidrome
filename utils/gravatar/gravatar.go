@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/navidrome/navidrome/utils/number"
+	"github.com/doreamon-design/navidrome/utils/number"
 )
 
 const baseUrl = "https://www.gravatar.com/avatar"

@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/doreamon-design/navidrome/utils/slice"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

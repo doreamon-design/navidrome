@@ -5,11 +5,11 @@ import (
 	"errors"
 	"net/http/httptest"
 
-	"github.com/navidrome/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
 
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/tests"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

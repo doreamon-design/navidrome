@@ -4,11 +4,11 @@ import (
 	"errors"
 	"net/http"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server"
-	"github.com/navidrome/navidrome/ui"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server"
+	"github.com/doreamon-design/navidrome/ui"
 )
 
 func (p *Router) handleShares(w http.ResponseWriter, r *http.Request) {

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/navidrome/navidrome/consts"
+	"github.com/doreamon-design/navidrome/consts"
 )
 
 // Use this in migrations that need to communicate something important (breaking changes, forced reindexes, etc...)

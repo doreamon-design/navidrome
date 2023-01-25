@@ -21,8 +21,8 @@ const links = {
   reddit: 'reddit.com/r/Navidrome',
   twitter: 'twitter.com/navidrome',
   discord: 'discord.gg/xh7j7yF',
-  source: 'github.com/navidrome/navidrome',
-  featureRequests: 'github.com/navidrome/navidrome/issues',
+  source: 'github.com/doreamon-design/navidrome',
+  featureRequests: 'github.com/doreamon-design/navidrome/issues',
 }
 
 const LinkToVersion = ({ version }) => {
@@ -34,10 +34,10 @@ const LinkToVersion = ({ version }) => {
   const commitID = parts[1].replace(/[()]/g, '')
   const isSnapshot = version.includes('SNAPSHOT')
   const url = isSnapshot
-    ? `https://github.com/navidrome/navidrome/compare/v${
+    ? `https://github.com/doreamon-design/navidrome/compare/v${
         parts[0].split('-')[0]
       }...${commitID}`
-    : `https://github.com/navidrome/navidrome/releases/tag/v${parts[0]}`
+    : `https://github.com/doreamon-design/navidrome/releases/tag/v${parts[0]}`
   return (
     <TableCell align="left">
       <Link href={url} target="_blank" rel="noopener noreferrer">

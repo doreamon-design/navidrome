@@ -6,8 +6,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 type mediafileArtworkReader struct {

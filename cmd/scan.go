@@ -3,7 +3,7 @@ package cmd
 import (
 	"context"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 	"github.com/spf13/cobra"
 )
 

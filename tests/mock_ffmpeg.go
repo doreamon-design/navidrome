@@ -6,7 +6,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func NewMockFFmpeg(data string) *MockFFmpeg {

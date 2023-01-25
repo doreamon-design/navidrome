@@ -3,10 +3,10 @@ package scanner
 import (
 	"context"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/scanner/metadata"
-	"github.com/navidrome/navidrome/tests"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/scanner/metadata"
+	"github.com/doreamon-design/navidrome/tests"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

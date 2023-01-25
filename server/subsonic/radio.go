@@ -3,9 +3,9 @@ package subsonic
 import (
 	"net/http"
 
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/server/subsonic/responses"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/server/subsonic/responses"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 func (api *Router) CreateInternetRadio(r *http.Request) (*responses.Subsonic, error) {

@@ -5,7 +5,7 @@ title: ""
 labels: bug
 assignees: ""
 ---
-<!-- Please check that another issue for the same bug has not been already made by searching the [issues](https://github.com/navidrome/navidrome/issues) -->
+<!-- Please check that another issue for the same bug has not been already made by searching the [issues](https://github.com/doreamon-design/navidrome/issues) -->
 
 ### Description
 

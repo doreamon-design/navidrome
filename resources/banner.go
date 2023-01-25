@@ -5,7 +5,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/navidrome/navidrome/consts"
+	"github.com/doreamon-design/navidrome/consts"
 )
 
 func loadBanner() string {

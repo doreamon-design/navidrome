@@ -5,7 +5,7 @@ title: ""
 labels: enhancement
 assignees: ""
 ---
-<!-- Please check that another issue for the same feature request has not been already made by searching the [issues](https://github.com/navidrome/navidrome/issues) -->
+<!-- Please check that another issue for the same feature request has not been already made by searching the [issues](https://github.com/doreamon-design/navidrome/issues) -->
 
 ### Is your feature request related to a problem? Please describe.
 

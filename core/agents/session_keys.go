@@ -3,7 +3,7 @@ package agents
 import (
 	"context"
 
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 // SessionKeys is a simple wrapper around the UserPropsRepository

@@ -3,7 +3,7 @@ package migrations
 import (
 	"database/sql"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 	"github.com/pressly/goose"
 )
 

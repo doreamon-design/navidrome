@@ -3,7 +3,7 @@ package utils
 import (
 	"os"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 func IsDirReadable(path string) (bool, error) {

@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/disintegration/imaging"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils/slice"
 )
 
 type playlistArtworkReader struct {

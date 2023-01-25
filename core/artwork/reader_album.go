@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/model"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/ffmpeg"
+	"github.com/doreamon-design/navidrome/model"
 )
 
 type albumArtworkReader struct {

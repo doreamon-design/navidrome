@@ -8,11 +8,11 @@ import (
 	"time"
 
 	"github.com/Masterminds/squirrel"
-	"github.com/navidrome/navidrome/core/artwork"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/doreamon-design/navidrome/core/artwork"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils"
+	"github.com/doreamon-design/navidrome/utils/slice"
 	"golang.org/x/exp/maps"
 )
 

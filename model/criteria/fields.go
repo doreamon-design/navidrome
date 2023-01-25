@@ -3,7 +3,7 @@ package criteria
 import (
 	"strings"
 
-	"github.com/navidrome/navidrome/log"
+	"github.com/doreamon-design/navidrome/log"
 )
 
 var fieldMap = map[string]*mappedField{

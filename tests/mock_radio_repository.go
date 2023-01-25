@@ -3,8 +3,8 @@ package tests
 import (
 	"errors"
 
+	"github.com/doreamon-design/navidrome/model"
 	"github.com/google/uuid"
-	"github.com/navidrome/navidrome/model"
 )
 
 type MockedRadioRepo struct {

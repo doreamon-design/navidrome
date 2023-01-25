@@ -9,10 +9,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/utils"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/utils"
 )
 
 type (
@@ -113,7 +113,7 @@ func loadDir(ctx context.Context, dirPath string) ([]string, *dirStats, error) {
 // fullReadDir reads all files in the folder, skipping the ones with errors.
 // It also detects when it is "stuck" with an error in the same directory over and over.
 // In this case, it and returns whatever it was able to read until it got stuck.
-// See discussion here: https://github.com/navidrome/navidrome/issues/1164#issuecomment-881922850
+// See discussion here: https://github.com/doreamon-design/navidrome/issues/1164#issuecomment-881922850
 func fullReadDir(ctx context.Context, dir fs.ReadDirFile) []os.DirEntry {
 	var allDirs []os.DirEntry
 	var prevErrStr = ""

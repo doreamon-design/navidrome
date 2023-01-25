@@ -15,12 +15,12 @@ import (
 	"time"
 
 	"github.com/dhowden/tag"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/core"
-	"github.com/navidrome/navidrome/core/ffmpeg"
-	"github.com/navidrome/navidrome/log"
-	"github.com/navidrome/navidrome/model"
-	"github.com/navidrome/navidrome/resources"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/core"
+	"github.com/doreamon-design/navidrome/core/ffmpeg"
+	"github.com/doreamon-design/navidrome/log"
+	"github.com/doreamon-design/navidrome/model"
+	"github.com/doreamon-design/navidrome/resources"
 )
 
 func selectImageReader(ctx context.Context, artID model.ArtworkID, extractFuncs ...sourceFunc) (io.ReadCloser, string, error) {
@@ -44,7 +44,7 @@ type sourceFunc func() (r io.ReadCloser, path string, err error)
 
 func (f sourceFunc) String() string {
 	name := runtime.FuncForPC(reflect.ValueOf(f).Pointer()).Name()
-	name = strings.TrimPrefix(name, "github.com/navidrome/navidrome/core/artwork.")
+	name = strings.TrimPrefix(name, "github.com/doreamon-design/navidrome/core/artwork.")
 	if _, after, found := strings.Cut(name, ")."); found {
 		name = after
 	}

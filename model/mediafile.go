@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/navidrome/navidrome/conf"
-	"github.com/navidrome/navidrome/consts"
-	"github.com/navidrome/navidrome/utils"
-	"github.com/navidrome/navidrome/utils/number"
-	"github.com/navidrome/navidrome/utils/slice"
+	"github.com/doreamon-design/navidrome/conf"
+	"github.com/doreamon-design/navidrome/consts"
+	"github.com/doreamon-design/navidrome/utils"
+	"github.com/doreamon-design/navidrome/utils/number"
+	"github.com/doreamon-design/navidrome/utils/slice"
 	"golang.org/x/exp/slices"
 )
 
