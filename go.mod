@@ -1,4 +1,4 @@
-module github.com/navidrome/navidrome
+module github.com/doreamon-design/navidrome
 
 go 1.18
 

@@ -1,10 +1,6 @@
 # GoReleaser config
 project_name: navidrome
 
-before:
-  hooks:
-    - go env -w GOFLAGS="-buildvcs=false"
-
 builds:
   - id: navidrome_linux_amd64
     env:
@@ -14,44 +10,44 @@ builds:
     goarch:
       - amd64
     flags:
-      - -tags=netgo
+      - -tags=embed,netgo
     ldflags:
       - "-extldflags '-static -lz'"
       - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
-  # - id: navidrome_linux_386
-  #   env:
-  #     - CGO_ENABLED=1
-  #     - PKG_CONFIG_PATH=/i386/lib/pkgconfig
-  #   goos:
-  #     - linux
-  #   goarch:
-  #     - "386"
-  #   flags:
-  #     - -tags=netgo
-  #   ldflags:
-  #     - "-extldflags '-static'"
-  #     - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
+  - id: navidrome_linux_386
+    env:
+      - CGO_ENABLED=1
+      - PKG_CONFIG_PATH=/i386/lib/pkgconfig
+    goos:
+      - linux
+    goarch:
+      - 386
+    flags:
+      - -tags=embed,netgo
+    ldflags:
+      - "-extldflags '-static'"
+      - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
-  # - id: navidrome_linux_arm
-  #   env:
-  #     - CGO_ENABLED=1
-  #     - CC=arm-linux-gnueabi-gcc
-  #     - CXX=arm-linux-gnueabi-g++
-  #     - PKG_CONFIG_PATH=/arm/lib/pkgconfig
-  #   goos:
-  #     - linux
-  #   goarch:
-  #     - arm
-  #   goarm:
-  #     - "5"
-  #     - "6"
-  #     - "7"
-  #   flags:
-  #     - -tags=netgo
-  #   ldflags:
-  #     - "-extldflags '-static'"
-  #     - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
+  - id: navidrome_linux_arm
+    env:
+      - CGO_ENABLED=1
+      - CC=arm-linux-gnueabihf-gcc
+      - CXX=arm-linux-gnueabihf-g++
+      - PKG_CONFIG_PATH=/arm/lib/pkgconfig
+    goos:
+      - linux
+    goarch:
+      - arm
+    goarm:
+      - 5
+      - 6
+      - 7
+    flags:
+      - -tags=embed,netgo
+    ldflags:
+      - "-extldflags '-static'"
+      - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
   - id: navidrome_linux_arm64
     env:
@@ -64,42 +60,42 @@ builds:
     goarch:
       - arm64
     flags:
-      - -tags=netgo
+      - -tags=embed,netgo
     ldflags:
       - "-extldflags '-static'"
       - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
-  # - id: navidrome_windows_386
-  #   env:
-  #     - CGO_ENABLED=1
-  #     - CC=i686-w64-mingw32-gcc
-  #     - CXX=i686-w64-mingw32-g++
-  #     - PKG_CONFIG_PATH=/mingw32/lib/pkgconfig
-  #   goos:
-  #     - windows
-  #   goarch:
-  #     - "386"
-  #   flags:
-  #     - -tags=netgo
-  #   ldflags:
-  #     - "-extldflags '-static'"
-  #     - -s -w -X github.com/navidrome/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/navidrome/navidrome/consts.gitTag={{.Version}}
+  - id: navidrome_windows_386
+    env:
+      - CGO_ENABLED=1
+      - CC=i686-w64-mingw32-gcc
+      - CXX=i686-w64-mingw32-g++
+      - PKG_CONFIG_PATH=/mingw32/lib/pkgconfig
+    goos:
+      - windows
+    goarch:
+      - 386
+    flags:
+      - -tags=embed,netgo
+    ldflags:
+      - "-extldflags '-static'"
+      - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
-  # - id: navidrome_windows_amd64
-  #   env:
-  #     - CGO_ENABLED=1
-  #     - CC=x86_64-w64-mingw32-gcc
-  #     - CXX=x86_64-w64-mingw32-g++
-  #     - PKG_CONFIG_PATH=/mingw64/lib/pkgconfig
-  #   goos:
-  #     - windows
-  #   goarch:
-  #     - amd64
-  #   flags:
-  #     - -tags=netgo
-  #   ldflags:
-  #     - "-extldflags '-static'"
-  #     - -s -w -X github.com/navidrome/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/navidrome/navidrome/consts.gitTag={{.Version}}
+  - id: navidrome_windows_amd64
+    env:
+      - CGO_ENABLED=1
+      - CC=x86_64-w64-mingw32-gcc
+      - CXX=x86_64-w64-mingw32-g++
+      - PKG_CONFIG_PATH=/mingw64/lib/pkgconfig
+    goos:
+      - windows
+    goarch:
+      - amd64
+    flags:
+      - -tags=embed,netgo
+    ldflags:
+      - "-extldflags '-static'"
+      - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
   - id: navidrome_darwin_amd64
     env:
@@ -112,22 +108,7 @@ builds:
     goarch:
       - amd64
     flags:
-      - -tags=netgo
-    ldflags:
-      - -s -w -X github.com/navidrome/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/navidrome/navidrome/consts.gitTag={{.Version}}
-
-  - id: navidrome_darwin_arm64
-    env:
-      - CGO_ENABLED=1
-      - CC=o64-clang
-      - CXX=o64-clang++
-      - PKG_CONFIG_PATH=/darwin/lib/pkgconfig
-    goos:
-      - darwin
-    goarch:
-      - arm64
-    flags:
-      - -tags=netgo
+      - -tags=embed,netgo
     ldflags:
       - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
@@ -139,7 +120,7 @@ archives:
       darwin: macOS
       linux: Linux
       windows: Windows
-      # 386: i386
+      386: i386
       amd64: x86_64
 
 checksum:
