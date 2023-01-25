@@ -116,20 +116,20 @@ builds:
     ldflags:
       - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
-  - id: navidrome_darwin_arm64
-    env:
-      - CGO_ENABLED=1
-      - CC=o64-clang
-      - CXX=o64-clang++
-      - PKG_CONFIG_PATH=/darwin/lib/pkgconfig
-    goos:
-      - darwin
-    goarch:
-      - arm64
-    flags:
-      - -tags=netgo
-    ldflags:
-      - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
+  # - id: navidrome_darwin_arm64
+  #   env:
+  #     - CGO_ENABLED=1
+  #     - CC=o64-clang
+  #     - CXX=o64-clang++
+  #     - PKG_CONFIG_PATH=/darwin/lib/pkgconfig
+  #   goos:
+  #     - darwin
+  #   goarch:
+  #     - arm64
+  #   flags:
+  #     - -tags=netgo
+  #   ldflags:
+  #     - -s -w -X github.com/doreamon-design/navidrome/consts.gitSha={{.ShortCommit}} -X github.com/doreamon-design/navidrome/consts.gitTag={{.Version}}
 
 archives:
   - format_overrides:

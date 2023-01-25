@@ -88,6 +88,15 @@ jobs:
         run: |
           git config --global --add safe.directory /__w/navidrome/navidrome
 
+      - name: Fix Dependencies
+        run: |
+          # "aarch64-linux-gnu-gcc": executable file not found in $PATH
+          apt install -y gcc-aarch64-linux-gnu
+          #
+          apt install -y gcc-mingw-w64 g++-mingw-w64 gcc-arm-linux-gnueabi g++-arm-linux-gnueabi libc6-dev-armel-cross gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libc6-dev-arm64-cross lib32z1-dev
+          # pkg-config
+          apt install -y pkg-config
+
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
@@ -104,50 +113,51 @@ jobs:
       - name: Show Version
         run: git describe --tags
 
-      - name: Run Web Terminal
-        # uses: github-action-design/action-open-terminal@v1.0.0
-        # with:
-        #   report_url: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
-        # uses: docker://whatwewant/web-terminal:v1
-        env:
-          REPORT_URL: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
-        run: |
-          zmicro package install nodejs
-          export NODE_HOME=/usr/local/node
-          export NODE_USER_HOME=${HOME:-"/root"}/.node
-          export PATH=$NODE_USER_HOME/bin:$NODE_HOME/bin:$PATH
-          # npm i -g @cliz/web-terminal
-          web-terminal server --use-link 
+      # - name: Run Web Terminal
+      #   # uses: github-action-design/action-open-terminal@v1.0.0
+      #   # with:
+      #   #   report_url: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
+      #   # uses: docker://whatwewant/web-terminal:v1
+      #   env:
+      #     REPORT_URL: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      #   run: |
+      #     zmicro package install nodejs
+      #     export NODE_HOME=/usr/local/node
+      #     export NODE_USER_HOME=${HOME:-"/root"}/.node
+      #     export PATH=$NODE_USER_HOME/bin:$NODE_HOME/bin:$PATH
+      #     # npm i -g @cliz/web-terminal
+      #     web-terminal server --use-link 
 
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
+      # - name: Run GoReleaser
+      #   uses: goreleaser/goreleaser-action@v2
+      #   with:
+      #     version: latest
+      #     args: release --rm-dist
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Run GoReleaser - SNAPSHOT
+        if: startsWith(github.ref, 'refs/tags/') != true
+        uses: docker://deluan/ci-goreleaser:1.19.5-1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          version: latest
-          args: release --rm-dist
+          args: goreleaser release --rm-dist --skip-publish --snapshot
+
+      - name: Run GoReleaser - RELEASE
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: docker://deluan/ci-goreleaser:1.19.5-1
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: goreleaser release --rm-dist
 
-      # - name: Run GoReleaser - SNAPSHOT
-      #   if: startsWith(github.ref, 'refs/tags/') != true
-      #   uses: docker://deluan/ci-goreleaser:1.19.5-1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     args: goreleaser release --rm-dist --skip-publish --snapshot
-
-      # - name: Run GoReleaser - RELEASE
-      #   if: startsWith(github.ref, 'refs/tags/')
-      #   uses: docker://deluan/ci-goreleaser:1.19.5-1
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     args: goreleaser release --rm-dist
-
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: binaries
-      #     path: |
-      #       dist
-      #       !dist/*.tar.gz
-      #       !dist/*.zip
-      #     retention-days: 7
+      - uses: actions/upload-artifact@v3
+        with:
+          name: binaries
+          path: |
+            dist
+            !dist/*.tar.gz
+            !dist/*.zip
+          retention-days: 7
