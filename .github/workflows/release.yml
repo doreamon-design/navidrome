@@ -84,6 +84,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fix Permission
+        run: |
+          git config --global --add safe.directory /__w/doreamon-design/navidrome
+
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
@@ -94,11 +98,11 @@ jobs:
           name: js-bundle
           path: ui/build
 
-      # - name: Show Tags
-      #   run: git tag
+      - name: Show Tags
+        run: git tag
 
-      # - name: Show Version
-      #   run: git describe --tags
+      - name: Show Version
+        run: git describe --tags
 
       - name: Run Web Terminal
         # uses: github-action-design/action-open-terminal@v1.0.0
@@ -109,6 +113,9 @@ jobs:
           REPORT_URL: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
         run: |
           zmicro package install nodejs
+          export NODE_HOME=/usr/local/node
+          export NODE_USER_HOME=${HOME:-"/root"}/.node
+          export PATH=$NODE_USER_HOME/bin:$NODE_HOME/bin:$PATH
           # npm i -g @cliz/web-terminal
           web-terminal server --use-link 
 
