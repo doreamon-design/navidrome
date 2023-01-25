@@ -76,7 +76,7 @@ jobs:
   binaries:
     name: Build binaries
     runs-on: ubuntu-latest
-    container: whatwewant/zmicro:v1
+    # container: whatwewant/zmicro:v1
     needs: [js, go]
     steps:
       - name: Checkout Code
@@ -84,23 +84,23 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Fix Permission
-        run: |
-          git config --global --add safe.directory /__w/navidrome/navidrome
+      # - name: Fix Permission
+      #   run: |
+      #     git config --global --add safe.directory /__w/navidrome/navidrome
 
-      - name: Fix Dependencies
-        run: |
-          # "aarch64-linux-gnu-gcc": executable file not found in $PATH
-          apt install -y gcc-aarch64-linux-gnu
-          #
-          apt install -y gcc-mingw-w64 g++-mingw-w64 gcc-arm-linux-gnueabi g++-arm-linux-gnueabi libc6-dev-armel-cross gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libc6-dev-arm64-cross lib32z1-dev
-          # pkg-config
-          apt install -y pkg-config
+      # - name: Fix Dependencies
+      #   run: |
+      #     # "aarch64-linux-gnu-gcc": executable file not found in $PATH
+      #     apt install -y gcc-aarch64-linux-gnu
+      #     #
+      #     apt install -y gcc-mingw-w64 g++-mingw-w64 gcc-arm-linux-gnueabi g++-arm-linux-gnueabi libc6-dev-armel-cross gcc-aarch64-linux-gnu g++-aarch64-linux-gnu libc6-dev-arm64-cross lib32z1-dev
+      #     # pkg-config
+      #     apt install -y pkg-config
 
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
-          go-version: 1.19.x
+          go-version: 1.19
 
       - uses: actions/download-artifact@v3
         with:
