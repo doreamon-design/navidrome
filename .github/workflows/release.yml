@@ -121,7 +121,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: goreleaser release --rm-dist --skip-publish
+          args: goreleaser release --rm-dist --skip-validate --skip-publish
 
       - uses: actions/upload-artifact@v3
         with:
