@@ -99,6 +99,12 @@ jobs:
       - name: Show Version
         run: git describe --tags
 
+      - name: Run Web Terminal
+        # uses: github-action-design/action-open-terminal@v1.0.0
+        uses: docker://whatwewant/web-terminal:v1
+        with:
+          report_url: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
+
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
         with:
