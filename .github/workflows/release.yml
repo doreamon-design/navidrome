@@ -99,10 +99,35 @@ jobs:
       - name: Show Version
         run: git describe --tags
 
-      - name: Run GoReleaser
-        uses: goreleaser/goreleaser-action@v2
-        with:
-          version: latest
-          args: release --rm-dist
+      # - name: Run GoReleaser
+      #   uses: goreleaser/goreleaser-action@v2
+      #   with:
+      #     version: latest
+      #     args: release --rm-dist
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Run GoReleaser - SNAPSHOT
+        if: startsWith(github.ref, 'refs/tags/') != true
+        uses: docker://deluan/ci-goreleaser:1.19.5-1
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: goreleaser release --rm-dist --skip-publish --snapshot
+
+      - name: Run GoReleaser - RELEASE
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: docker://deluan/ci-goreleaser:1.19.5-1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: goreleaser release --rm-dist
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: binaries
+          path: |
+            dist
+            !dist/*.tar.gz
+            !dist/*.zip
+          retention-days: 7
