@@ -123,14 +123,14 @@ func (s *Server) initRoutes() {
 					return tokeString
 				})
 				if err != nil {
-					return fmt.Errorf("[oauth2][VerifyUser] failed to verify token with jwtauth(error: %v)", err)
+					return fmt.Errorf("[oauth2][VerifyUser] failed to verify token with jwtauth(error: %w)", err)
 				}
 
 				username := token.Subject()
 
 				user, err := s.ds.User(ctx).FindByUsername(username)
 				if err != nil {
-					return fmt.Errorf("[oauth2][VerifyUser] failed to get user by username(%s, error: %v)", username, err)
+					return fmt.Errorf("[oauth2][VerifyUser] failed to get user by username(%s, error: %w)", username, err)
 				}
 
 				ctx = log.NewContext(ctx, "username", username)
@@ -144,12 +144,12 @@ func (s *Server) initRoutes() {
 				userRepo := s.ds.User(r.Context())
 				userInternal, err := userRepo.GetOrCreate(user.Email, user.Nickname)
 				if err != nil {
-					return "", fmt.Errorf("[oauth2] failed to get or create user(%s): %v", user.Nickname, err)
+					return "", fmt.Errorf("[oauth2] failed to get or create user(%s): %w", user.Nickname, err)
 				}
 
 				err = userRepo.UpdateLastLoginAt(userInternal.ID)
 				if err != nil {
-					return "", fmt.Errorf("[oauth2] fail to update LastLoginAt(user: %s, error: %v)", user.Nickname, err)
+					return "", fmt.Errorf("[oauth2] fail to update LastLoginAt(user: %s, error: %w)", user.Nickname, err)
 				}
 
 				tokenString, err := auth.CreateToken(userInternal)
@@ -193,7 +193,7 @@ func (s *Server) initRoutes() {
 				}
 				dataString, _ := json.Marshal(data)
 				w.WriteHeader(401)
-				w.Write(dataString)
+				_, _ = w.Write(dataString)
 				return
 			}
 
@@ -205,7 +205,7 @@ func (s *Server) initRoutes() {
 				}
 				dataString, _ := json.Marshal(data)
 				w.WriteHeader(401)
-				w.Write(dataString)
+				_, _ = w.Write(dataString)
 				return
 			}
 
@@ -213,7 +213,7 @@ func (s *Server) initRoutes() {
 			payload["token"] = tokenString
 			dataString, _ := json.Marshal(payload)
 			w.WriteHeader(200)
-			w.Write(dataString)
+			_, _ = w.Write(dataString)
 		})
 	})
 
