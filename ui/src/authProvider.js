@@ -71,13 +71,13 @@ const authProvider = {
     removeItems()
     // return Promise.resolve()
 
-    window.location.replace("/logout")
-    
+    window.location.replace('/logout')
+
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve();
-      }, 3000);
-    });
+        resolve()
+      }, 3000)
+    })
   },
 
   checkAuth: () =>
@@ -114,7 +114,7 @@ const authProvider = {
 
     const request = new Request(url, {
       method: 'GET',
-      headers: new Headers({ 'Accept': 'application/json' }),
+      headers: new Headers({ Accept: 'application/json' }),
     })
     return fetch(request)
       .then((response) => {
@@ -142,7 +142,7 @@ const authProvider = {
         }
 
         // throw new Error(error)
-        console.error("failed to get user:", error)
+        console.error('failed to get user:', error)
         // authProvider.logout()
       })
   },

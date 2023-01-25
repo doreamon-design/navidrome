@@ -69,22 +69,16 @@ const adminStore = createAdminStore({
 })
 
 const App = () => {
-  const [isCheckLogining, setIsCheckLogining] = useState(true);
+  const [isCheckLogining, setIsCheckLogining] = useState(true)
 
   useEffect(() => {
-    authProvider
-      .autoLogin()
-      .finally(() => {
-        setIsCheckLogining(false);
-      });
-  }, []);
+    authProvider.autoLogin().finally(() => {
+      setIsCheckLogining(false)
+    })
+  }, [])
 
   if (isCheckLogining) {
-    return (
-      <div>
-        Checking login ...
-      </div>
-    );
+    return <div>Checking login ...</div>
   }
 
   return (
@@ -102,7 +96,7 @@ const Admin = (props) => {
       authProvider
         .checkAuth()
         .then(() => startEventStream(adminStore.dispatch))
-        .catch(() => { })
+        .catch(() => {})
     }
     return () => {
       stopEventStream()
