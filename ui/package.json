@@ -7,6 +7,8 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.58",
     "@material-ui/styles": "^4.11.5",
+    "@zodash/cookie": "^0.1.9",
+    "@zodash/doreamon": "^1.2.6",
     "blueimp-md5": "^2.19.0",
     "clsx": "^1.1.1",
     "connected-react-router": "^6.9.1",

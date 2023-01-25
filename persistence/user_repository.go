@@ -12,6 +12,7 @@ import (
 	. "github.com/Masterminds/squirrel"
 	"github.com/beego/beego/v2/client/orm"
 	"github.com/deluan/rest"
+	"github.com/go-zoox/random"
 	"github.com/google/uuid"
 	"github.com/navidrome/navidrome/conf"
 	"github.com/navidrome/navidrome/consts"
@@ -103,6 +104,42 @@ func (r *userRepository) FindByUsernameWithPassword(username string) (*model.Use
 		_ = r.decryptPassword(usr)
 	}
 	return usr, err
+}
+
+func (r *userRepository) GetOrCreate(email string, nickname string) (*model.User, error) {
+	sel := r.newSelect().Columns("*").Where(Like{"email": email})
+	var usr model.User
+	err := r.queryOne(sel, &usr)
+	if err != nil {
+		// r.Put(&model.User{
+		// 	UserName:    "admin",
+		// 	NewPassword: "123456",
+		// 	IsAdmin:     true,
+		// })
+
+		_, err := r.FindFirstAdmin()
+		// fmt.Println("[GetOrCreate] found admin:", adminUser, err)
+		isAdminExists := err == nil
+
+		usr = model.User{
+			ID:          uuid.NewString(),
+			UserName:    email,
+			Name:        nickname,
+			Email:       email,
+			NewPassword: random.Token(),
+			// IsAdmin: true,
+			IsAdmin:     !isAdminExists,
+			LastLoginAt: time.Now(),
+		}
+
+		if err := r.Put(&usr); err != nil {
+			return nil, fmt.Errorf("[GetOrCreate] failed to create new user: %s(email: %s)", nickname, email)
+		}
+
+		// r.queryOne(sel, &usr)
+	}
+
+	return &usr, nil
 }
 
 func (r *userRepository) UpdateLastLoginAt(id string) error {

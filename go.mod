@@ -22,6 +22,8 @@ require (
 	github.com/go-chi/cors v1.2.1
 	github.com/go-chi/httprate v0.7.1
 	github.com/go-chi/jwtauth/v5 v5.1.0
+	github.com/go-zoox/oauth2 v1.4.5
+	github.com/go-zoox/random v1.0.2
 	github.com/golangci/golangci-lint v1.50.1
 	github.com/google/uuid v1.3.0
 	github.com/google/wire v0.5.0
@@ -105,8 +107,16 @@ require (
 	github.com/go-toolsmith/strparse v1.0.0 // indirect
 	github.com/go-toolsmith/typep v1.0.2 // indirect
 	github.com/go-xmlfmt/xmlfmt v0.0.0-20191208150333-d5b6f63a941b // indirect
+	github.com/go-zoox/chalk v1.0.1 // indirect
+	github.com/go-zoox/cookie v1.0.2 // indirect
+	github.com/go-zoox/core-utils v1.1.0 // indirect
+	github.com/go-zoox/datetime v1.1.0 // indirect
+	github.com/go-zoox/fetch v1.7.3 // indirect
+	github.com/go-zoox/headers v1.0.4 // indirect
+	github.com/go-zoox/logger v1.3.3 // indirect
 	github.com/gobwas/glob v0.2.3 // indirect
 	github.com/goccy/go-json v0.10.0 // indirect
+	github.com/goccy/go-yaml v1.9.5 // indirect
 	github.com/gofrs/flock v0.8.1 // indirect
 	github.com/golang-sql/civil v0.0.0-20190719163853-cb61b32ac6fe // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
@@ -214,6 +224,9 @@ require (
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/tdakkota/asciicheck v0.1.1 // indirect
 	github.com/tetafro/godot v1.4.11 // indirect
+	github.com/tidwall/gjson v1.14.4 // indirect
+	github.com/tidwall/match v1.1.1 // indirect
+	github.com/tidwall/pretty v1.2.0 // indirect
 	github.com/timakin/bodyclose v0.0.0-20210704033933-f49887972144 // indirect
 	github.com/timonwong/loggercheck v0.9.3 // indirect
 	github.com/tomarrell/wrapcheck/v2 v2.7.0 // indirect
@@ -233,6 +246,7 @@ require (
 	golang.org/x/mod v0.7.0 // indirect
 	golang.org/x/net v0.5.0 // indirect
 	golang.org/x/sys v0.4.0 // indirect
+	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
@@ -242,3 +256,5 @@ require (
 	mvdan.cc/lint v0.0.0-20170908181259-adc824a0674b // indirect
 	mvdan.cc/unparam v0.0.0-20220706161116-678bad134442 // indirect
 )
+
+// replace github.com/go-zoox/oauth2 => ../../go-zoox/oauth2

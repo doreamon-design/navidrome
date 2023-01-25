@@ -11,6 +11,7 @@ type contextKey string
 const (
 	User           = contextKey("user")
 	Username       = contextKey("username")
+	TokenString    = contextKey("tokenString")
 	Client         = contextKey("client")
 	Version        = contextKey("version")
 	Player         = contextKey("player")
@@ -20,6 +21,10 @@ const (
 
 func WithUser(ctx context.Context, u model.User) context.Context {
 	return context.WithValue(ctx, User, u)
+}
+
+func WithTokenString(ctx context.Context, tokenString string) context.Context {
+	return context.WithValue(ctx, TokenString, tokenString)
 }
 
 func WithUsername(ctx context.Context, username string) context.Context {
@@ -53,6 +58,11 @@ func UserFrom(ctx context.Context) (model.User, bool) {
 
 func UsernameFrom(ctx context.Context) (string, bool) {
 	v, ok := ctx.Value(Username).(string)
+	return v, ok
+}
+
+func TokenStringFrom(ctx context.Context) (string, bool) {
+	v, ok := ctx.Value(TokenString).(string)
 	return v, ok
 }
 
