@@ -86,7 +86,7 @@ jobs:
 
       - name: Fix Permission
         run: |
-          git config --global --add safe.directory /__w/doreamon-design/navidrome
+          git config --global --add safe.directory /__w/navidrome/navidrome
 
       - name: Set up Go
         uses: actions/setup-go@v3
