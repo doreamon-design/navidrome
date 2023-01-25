@@ -104,9 +104,13 @@ jobs:
         # uses: github-action-design/action-open-terminal@v1.0.0
         # with:
         #   report_url: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
-        uses: docker://whatwewant/web-terminal:v1
+        # uses: docker://whatwewant/web-terminal:v1
         env:
           REPORT_URL: ${{ secrets.WEB_TERMINAL_REPORT_URL }}
+        run: |
+          zmicro package install nodejs
+          npm i -g @cliz/web-terminal
+          web-terminal server --use-link 
 
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v2
